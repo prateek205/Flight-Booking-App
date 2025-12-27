@@ -46,3 +46,7 @@ URL: https://flight-booking-app-tan.vercel.app/
 - Integrate API for real flight data
 - Implement booking confirmation flow
 - Add dark/light mode
+
+## 🙏 Acknowledgement
+
+I would like to acknowledge the online learning resources, UI inspiration from modern flight booking platforms, and the developer community for guidance and best practices that helped in building this project using HTML and CSS.
