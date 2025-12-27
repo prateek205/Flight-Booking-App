@@ -18,6 +18,9 @@ The Flight Booking App is a static front-end project designed using HTML and CSS
 - HTML5
 - CSS3
 
+## 📺 Live Demo
+URL: https://flight-booking-app-tan.vercel.app/
+
 ## 📁 Folder Structure
 
 ```
