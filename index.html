@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkyWing - Flight Booking App</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Top Navigation -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-plane"></i>
+                <span>SkyWing</span>
+            </div>
+            
+            <!-- Desktop Navigation -->
+            <nav class="desktop-nav">
+                <ul>
+                    <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="#"><i class="fas fa-search"></i> Search Flights</a></li>
+                    <li><a href="#"><i class="fas fa-receipt"></i> My Bookings</a></li>
+                    <li><a href="#"><i class="fas fa-bell"></i> Notifications</a></li>
+                    <li><a href="#"><i class="fas fa-user"></i> Profile</a></li>
+                </ul>
+            </nav>
+            
+            <!-- Mobile Hamburger Menu -->
+            <div class="hamburger-menu">
+                <input type="checkbox" id="menu-toggle">
+                <label for="menu-toggle" class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+                
+                <!-- Mobile Navigation -->
+                <nav class="mobile-nav">
+                    <div class="mobile-user-info">
+                        <div class="user-avatar">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                        <div class="user-details">
+                            <h3>John Traveler</h3>
+                            <p>john@example.com</p>
+                        </div>
+                    </div>
+                    
+                    <ul>
+                        <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="#"><i class="fas fa-search"></i> Search Flights</a></li>
+                        <li><a href="#"><i class="fas fa-receipt"></i> My Bookings</a></li>
+                        <li><a href="#"><i class="fas fa-bell"></i> Notifications <span class="notification-count">3</span></a></li>
+                        <li><a href="#"><i class="fas fa-user"></i> Profile</a></li>
+                        <li><a href="#"><i class="fas fa-heart"></i> Saved Flights</a></li>
+                        <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+                        <li><a href="#"><i class="fas fa-question-circle"></i> Help & Support</a></li>
+                        <li><a href="#"><i class="fas fa-sign-out-alt"></i> Sign Out</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Booking Form Section -->
+            <section class="booking-section">
+                <h1>Book Your Flight</h1>
+                <p>Find and book flights to destinations worldwide</p>
+                
+                <div class="booking-form">
+                    <div class="form-tabs">
+                        <button class="tab active" data-tab="one-way">One Way</button>
+                        <button class="tab" data-tab="round-trip">Round Trip</button>
+                        <button class="tab" data-tab="multi-city">Multi-City</button>
+                    </div>
+                    
+                    <form class="flight-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="from"><i class="fas fa-plane-departure"></i> From</label>
+                                <input type="text" id="from" placeholder="City or airport" value="New York (JFK)">
+                            </div>
+                            
+                            <div class="swap-button">
+                                <button type="button" class="swap-btn"><i class="fas fa-exchange-alt"></i></button>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="to"><i class="fas fa-plane-arrival"></i> To</label>
+                                <input type="text" id="to" placeholder="City or airport" value="London (LHR)">
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="departure"><i class="fas fa-calendar-alt"></i> Departure</label>
+                                <input type="text" id="departure" placeholder="Select date" value="15 June 2023">
+                            </div>
+                            
+                            <div class="form-group return-date">
+                                <label for="return"><i class="fas fa-calendar-alt"></i> Return</label>
+                                <input type="text" id="return" placeholder="Select date" value="22 June 2023">
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="passengers"><i class="fas fa-users"></i> Passengers</label>
+                                <div class="passenger-selector">
+                                    <button type="button" class="passenger-btn minus">-</button>
+                                    <span id="passenger-count">1</span>
+                                    <button type="button" class="passenger-btn plus">+</button>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="class"><i class="fas fa-chair"></i> Class</label>
+                                <select id="class">
+                                    <option>Economy</option>
+                                    <option>Premium Economy</option>
+                                    <option>Business</option>
+                                    <option>First Class</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="search-btn">
+                            <i class="fas fa-search"></i> Search Flights
+                        </button>
+                    </form>
+                </div>
+            </section>
+            
+            <!-- Flight Deals Section -->
+            <section class="deals-section">
+                <h2>Today's Best Deals</h2>
+                
+                <div class="deals-container">
+                    <div class="deal-card">
+                        <div class="deal-header">
+                            <div class="route">
+                                <span class="city">New York</span>
+                                <i class="fas fa-plane"></i>
+                                <span class="city">London</span>
+                            </div>
+                            <div class="price">$499</div>
+                        </div>
+                        <div class="deal-details">
+                            <div class="airline">
+                                <i class="fas fa-plane"></i>
+                                <span>SkyWing Airlines</span>
+                            </div>
+                            <div class="flight-info">
+                                <div class="info-item">
+                                    <i class="far fa-clock"></i>
+                                    <span>7h 30m</span>
+                                </div>
+                                <div class="info-item">
+                                    <i class="fas fa-suitcase-rolling"></i>
+                                    <span>23kg</span>
+                                </div>
+                            </div>
+                            <button class="book-btn">Book Now</button>
+                        </div>
+                    </div>
+                    
+                    <div class="deal-card">
+                        <div class="deal-header">
+                            <div class="route">
+                                <span class="city">Los Angeles</span>
+                                <i class="fas fa-plane"></i>
+                                <span class="city">Tokyo</span>
+                            </div>
+                            <div class="price">$899</div>
+                        </div>
+                        <div class="deal-details">
+                            <div class="airline">
+                                <i class="fas fa-plane"></i>
+                                <span>Pacific Airlines</span>
+                            </div>
+                            <div class="flight-info">
+                                <div class="info-item">
+                                    <i class="far fa-clock"></i>
+                                    <span>11h 15m</span>
+                                </div>
+                                <div class="info-item">
+                                    <i class="fas fa-suitcase-rolling"></i>
+                                    <span>30kg</span>
+                                </div>
+                            </div>
+                            <button class="book-btn">Book Now</button>
+                        </div>
+                    </div>
+                    
+                    <div class="deal-card">
+                        <div class="deal-header">
+                            <div class="route">
+                                <span class="city">Chicago</span>
+                                <i class="fas fa-plane"></i>
+                                <span class="city">Paris</span>
+                            </div>
+                            <div class="price">$649</div>
+                        </div>
+                        <div class="deal-details">
+                            <div class="airline">
+                                <i class="fas fa-plane"></i>
+                                <span>EuroConnect</span>
+                            </div>
+                            <div class="flight-info">
+                                <div class="info-item">
+                                    <i class="far fa-clock"></i>
+                                    <span>8h 45m</span>
+                                </div>
+                                <div class="info-item">
+                                    <i class="fas fa-suitcase-rolling"></i>
+                                    <span>23kg</span>
+                                </div>
+                            </div>
+                            <button class="book-btn">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Upcoming Flights Section -->
+            <section class="upcoming-section">
+                <h2>Your Upcoming Flights</h2>
+                
+                <div class="upcoming-flights">
+                    <div class="flight-card">
+                        <div class="flight-header">
+                            <h3>New York → London</h3>
+                            <span class="status confirmed">Confirmed</span>
+                        </div>
+                        <div class="flight-details">
+                            <div class="detail-item">
+                                <div class="label">Date & Time</div>
+                                <div class="value">15 June 2023, 18:45</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="label">Flight No.</div>
+                                <div class="value">SW 2456</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="label">Terminal / Gate</div>
+                                <div class="value">T4 / B12</div>
+                            </div>
+                        </div>
+                        <div class="flight-actions">
+                            <button class="action-btn"><i class="fas fa-ticket-alt"></i> View Ticket</button>
+                            <button class="action-btn"><i class="fas fa-edit"></i> Modify</button>
+                        </div>
+                    </div>
+                    
+                    <div class="flight-card">
+                        <div class="flight-header">
+                            <h3>Los Angeles → Tokyo</h3>
+                            <span class="status pending">Pending</span>
+                        </div>
+                        <div class="flight-details">
+                            <div class="detail-item">
+                                <div class="label">Date & Time</div>
+                                <div class="value">22 July 2023, 14:20</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="label">Flight No.</div>
+                                <div class="value">PA 7890</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="label">Terminal / Gate</div>
+                                <div class="value">T2 / A05</div>
+                            </div>
+                        </div>
+                        <div class="flight-actions">
+                            <button class="action-btn"><i class="fas fa-ticket-alt"></i> View Ticket</button>
+                            <button class="action-btn"><i class="fas fa-edit"></i> Modify</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>SkyWing</h3>
+                    <p>Your trusted partner for flight bookings since 2010. We offer the best prices and customer service.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> +1 234 567 8900</li>
+                        <li><i class="fas fa-envelope"></i> support@skywing.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Aviation St, NY 10001</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 SkyWing Flight Booking App. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
